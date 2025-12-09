@@ -7,143 +7,130 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f9f5f0;     /* Crema suave */
-    color: #443322;          /* Chocolate oscuro */
+    background: #eef5fb;
+    color: #1b3c59;
     line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+/* NAVBAR */
 .navbar {
-    background: #8b6f47;     /* Marrón dorado */
-    color: #fff8e7;
+    background: #005b96;
+    color: white;
     padding: 16px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: fixed;
-    top: 0;
-    left: 0;
     width: 100%;
+    top: 0;
     z-index: 9999;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .logo {
     font-size: 26px;
     font-weight: bold;
-    color: #fff8e7;
 }
 
 /* NAV DERECHA */
 .nav-right {
     display: flex;
-    align-items: center;
     gap: 14px;
+    align-items: center;
 }
 
-/* SELECT SITIOS */
 .sitios-select {
-    padding: 10px 14px;
-    border: 2px solid #fff8e7;
+    padding: 10px;
     border-radius: 10px;
     background: white;
-    color: #8b6f47;
-    font-size: 15px;
-    font-weight: 500;
+    border: 2px solid #bcd7ea;
+    color: #005b96;
     cursor: pointer;
-    transition: all .3s ease;
+    font-weight: 600;
 }
 
-.sitios-select:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
-}
-
-/* BOTONES DERECHA */
+/* BOTONES */
 .nav-btn {
-    background: #d4af37;
+    background: #0077c8;
     color: white;
-    padding: 10px 16px;
+    padding: 10px 18px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 14.5px;
-    transition: all .3s ease;
-    box-shadow: 0 2px 6px rgba(212,175,55,0.4);
+    transition: .3s;
 }
 
 .nav-btn:hover {
-    background: #c19a2e;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(212,175,55,0.5);
+    background: #005b96;
 }
 
-.nav-btn.active {
-    background: #a67c52 !important;
-    font-weight: bold;
+.active {
+    background: #003f63 !important;
 }
 
-/* Responsive nav right */
+/* RESPONSIVE MENU */
+.menu-btn {
+    display: none;
+    cursor: pointer;
+    background: #0077c8;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 10px;
+}
+
 @media (max-width: 868px) {
-    .nav-right {
-        position: absolute;
-        top: 70px;
-        right: 15px;
-        background: #8b6f47;
-        padding: 15px;
-        border-radius: 14px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        flex-direction: column;
-        gap: 12px;
-        display: none;
-        z-index: 9999;
+    .menu-btn {
+        display: block;
     }
-
-    .nav-right.show { display: flex; }
-
-    .sitios-select, .nav-btn {
-        width: 220px;
-        text-align: center;
+    .nav-right {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 15px;
+        top: 70px;
+        background: #005b96;
+        padding: 20px;
+        border-radius: 12px;
+    }
+    .nav-right.show {
+        display: flex;
     }
 }
 
-/* ================= CONTENIDO ================= */
+/* CONTENIDO */
 .container {
-    padding: 110px 20px 40px;
     max-width: 1200px;
     margin: auto;
+    padding: 120px 20px 40px;
 }
 
 h1 {
     text-align: center;
-    color: #8b6f47;
     font-size: 2.8rem;
+    color: #003f63;
     margin-bottom: 20px;
-    font-weight: bold;
 }
 
-/* ================= TARJETAS ================= */
+/* TARJETAS */
 .cards {
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 40px;
 }
 
 .card {
-    background: #ffffff;
+    background: white;
     width: 320px;
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid #e8dcc1;
-    box-shadow: 0 8px 25px rgba(139,111,71,0.15);
-    transition: all .4s ease;
+    box-shadow: 0 8px 25px rgba(0,91,150,0.15);
+    transition: .3s;
 }
 
 .card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 16px 35px rgba(139,111,71,0.25);
+    transform: translateY(-10px);
+    box-shadow: 0 12px 35px rgba(0,91,150,0.25);
 }
 
 .card img {
@@ -153,88 +140,77 @@ h1 {
 }
 
 .card h3 {
-    padding: 15px 20px 8px;
-    color: #8b6f47;
-    font-size: 1.4rem;
+    padding: 14px 20px 8px;
+    color: #005b96;
 }
 
 .card p {
     padding: 0 20px;
-    color: #665039;
+    color: #1b3c59;
 }
 
 .card strong {
+    padding: 12px 20px;
     display: block;
-    padding: 10px 20px;
-    color: #d4af37;
     font-size: 1.5rem;
+    color: #0077c8;
 }
 
 .card button {
     width: 100%;
     padding: 15px;
-    background: #8b6f47;
+    background: #005b96;
     color: white;
     border: none;
     font-size: 1.1rem;
     cursor: pointer;
-    transition: background .3s;
 }
 
 .card button:hover {
-    background: #a67c52;
+    background: #003f63;
 }
 
-/* ================= CARRITO ================= */
+/* CARRITO */
 #carrito {
     background: white;
     max-width: 700px;
     margin: 50px auto;
     padding: 25px;
     border-radius: 16px;
-    border: 1px solid #e8dcc1;
-    box-shadow: 0 8px 25px rgba(139,111,71,0.15);
+    box-shadow: 0 8px 25px rgba(0,91,150,0.15);
 }
 
 #carrito h2 {
-    color: #8b6f47;
-}
-
-#carrito ul {
-    margin: 15px 0;
-    list-style: none;
+    color: #003f63;
 }
 
 #carrito li {
-    padding: 8px 0;
-    border-bottom: 1px solid #eee;
-    color: #665039;
+    padding: 10px 0;
+    border-bottom: 1px solid #e1e9f0;
 }
 
 #total {
-    margin-top: 10px;
-    color: #d4af37;
-    font-size: 1.2rem;
     font-weight: bold;
+    color: #0077c8;
+    margin-top: 10px;
+    font-size: 1.2rem;
 }
 
 #finalizarBtn {
     width: 100%;
-    margin-top: 20px;
     padding: 14px;
-    background: #d4af37;
+    background: #0077c8;
     border: none;
     color: white;
-    font-size: 1rem;
     border-radius: 8px;
-    transition: background .3s;
+    margin-top: 20px;
 }
 
 #finalizarBtn:hover {
-    background: #c19a2e;
+    background: #005b96;
 }
 
-/* ================= FORMULARIO ================= */
+/* FORMULARIO */
 #formularioCompra {
     display: none;
     background: white;
@@ -242,59 +218,35 @@ h1 {
     margin: 30px auto;
     padding: 25px;
     border-radius: 16px;
-    border: 1px solid #e8dcc1;
-    box-shadow: 0 8px 25px rgba(139,111,71,0.15);
+    box-shadow: 0 8px 25px rgba(0,91,150,0.15);
 }
 
 #formularioCompra input,
 #formularioCompra textarea {
     width: 100%;
     padding: 14px;
-    margin-bottom: 15px;
-    border: 1.5px solid #d4c19e;
+    border: 1px solid #bcd7ea;
     border-radius: 8px;
-    font-size: 16px;
-}
-
-#formularioCompra input:focus,
-#formularioCompra textarea:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+    margin-bottom: 15px;
 }
 
 #formularioCompra button {
     width: 100%;
     padding: 14px;
-    background: #8b6f47;
+    background: #005b96;
     color: white;
-    border: none;
     border-radius: 8px;
-    font-size: 1rem;
-    transition: background .3s;
 }
 
 #formularioCompra button:hover {
-    background: #a67c52;
+    background: #003f63;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER */
 footer {
-    margin-top: 60px;
-    background: #443322;
-    color: #fff8e7;
+    background: #003f63;
     text-align: center;
     padding: 20px;
-    font-size: 0.9rem;
-}
-
-/* ================= RESPONSIVE ================= */
-@media (max-width: 768px) {
-    .card {
-        width: 100%;
-        max-width: 380px;
-    }
-
-    h1 {
-        font-size: 2.3rem;
-    }
+    color: white;
+    margin-top: 60px;
 }

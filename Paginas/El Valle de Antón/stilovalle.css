@@ -255,3 +255,17 @@ footer {
         width: 92%;
     }
 }
+.btn-quitar {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+}
+
+.btn-quitar:hover {
+    background: #922b21;
+}
