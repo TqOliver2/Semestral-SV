@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquetes Turísticos - Turismo Coclé</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Turismo Coclé</div>
+    <div class="nav-right">
+        <select class="sitios-select" onchange="if(this.value) window.location.href=this.value">
+            <option value="" selected disabled>Sitios Turísticos</option>
+            <option value="../Inicio.html">Inicio</option>
+            <option value="../El Valle de Antón/el valle.html">El Valle de Antón</option>
+            <option value="santa-clara.html">Playa Santa Clara</option>
+            <option value="../El caño/El cano.html">El Caño</option>
+        </select>
+        <a href="paquetes.html" class="nav-btn active">Venta de Paquetes</a>
+        <a href="sobre-nosotros.html" class="nav-btn">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-btn">Contacto</a>
+    </div>
+    <div class="menu-btn" id="menuBtn">Menú</div>
+</nav>
+
+<div class="container" style="margin-top:90px;">
+    <h1 style="text-align:center; color:#006ba6;">Todos nuestros paquetes turísticos</h1>
+    <p style="text-align:center; font-size:19px; max-width:900px; margin:20px auto 50px;">
+        Precios todo incluido desde Panamá o Penonomé · Transporte privado · Guías locales
+    </p>
+
+    <div class="cards">
+        <!-- El Valle -->
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/f7/25/45/f72545855fc2d894d3100db2c0113a3a.jpg" alt="El Valle">
+            <h3>Escapada Fin de Semana – El Valle</h3>
+            <p>2 días / 1 noche + canopy + termales + hospedaje</p>
+            <strong>$179</strong>
+            <a href="El Valle de Antón/el valle.html" class="btn-reservar">Ver detalles →</a>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/f7/25/45/f72545855fc2d894d3100db2c0113a3a.jpg" alt="El Valle">
+            <h3>Tour 1 Día – El Valle de Antón</h3>
+            <p>India Dormida + Chorro del Macho + almuerzo</p>
+            <strong>$95</strong>
+            <a href="El Valle de Antón/el valle.html" class="btn-reservar">Ver detalles →</a>
+        </div>
+
+        <!-- Playa Santa Clara -->
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/3a/b1/9d/3ab19dc467ff4c93fd201122852eea4b.jpg" alt="Santa Clara">
+            <h3>Día Todo Incluido – Playa Santa Clara</h3>
+            <p>Transporte + almuerzo + open bar + piscina</p>
+            <strong>$85</strong>
+            <a href="Playa Santa Clara/santa-clara.html" class="btn-reservar">Ver detalles →</a>
+        </div>
+
+        <!-- El Caño -->
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.gLBPnUC63VOJNeY7p28ZugHaE6" alt="El Caño">
+            <h3>Tour Arqueológico El Caño + El Valle</h3>
+            <p>Visita guiada + almuerzo + traslado al Valle</p>
+            <strong>$130</strong>
+            <a href="El caño/El cano.html" class="btn-reservar">Ver detalles →</a>
+        </div>
+    </div>
+</div>
+
+<footer><p>© 2025 Turismo en Coclé</p></footer>
+<script src="JS.js"></script>
+</body>
+</html>

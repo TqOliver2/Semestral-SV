@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Turismo Coclé</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Turismo Coclé</div>
+    <div class="nav-right">
+        <select class="sitios-select" onchange="if(this.value) window.location.href=this.value">
+            <option value="" selected disabled>Sitios Turísticos</option>
+            <option value="../Inicio.html">Inicio</option>
+            <option value="el valle.html">El Valle de Antón</option>
+            <option value="../Playa Santa Clara/santa-clara.html">Playa Santa Clara</option>
+            <option value="../El caño/El cano.html">El Caño</option>
+        </select>
+        <a href="paquetes.html" class="nav-btn">Venta de Paquetes</a>
+        <a href="sobre-nosotros.html" class="nav-btn active">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-btn">Contacto</a>
+    </div>
+    <div class="menu-btn" id="menuBtn">Menú</div>
+</nav>
+
+<div class="container" style="margin-top:90px; text-align:center;">
+    <h1 style="color:#1e6b4e;">Sobre Nosotros</h1>
+    <img src="https://i.pinimg.com/736x/8b/47/1f/8b471f8b5e9c9e17d03d4d8e9c9e17d0.jpg" alt="Equipo" style="width:100%; max-width:700px; border-radius:20px; margin:30px 0; box-shadow:0 10px 30px rgba(0,0,0,0.15);">
+
+    <p style="font-size:19px; max-width:900px; margin:0 auto 30px;">
+        Somos <strong>coclesanos de pura cepa</strong>. Desde 2018 conectamos a miles de visitantes con lo más auténtico de nuestra provincia.
+    </p>
+    <p style="font-size:18px; max-width:900px; margin:0 auto 40px; background:#e8f5e9; padding:30px; border-radius:15px; border-left:6px solid #3ba36a;">
+        Trabajamos solo con guías locales certificados, hospedaje familiar y transporte seguro. <br>
+        Cada reserva que haces apoya directamente a las comunidades de Coclé.
+    </p>
+
+    <div style="display:flex; flex-wrap:wrap; gap:30px; justify-content:center; margin:50px 0;">
+        <div style="background:white; padding:25px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.1); width:280px;">
+            <h3 style="color:#1e6b4e;">+5 años</h3>
+            <p>Operando con amor por Coclé</p>
+        </div>
+        <div style="background:white; padding:25px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.1); width:280px;">
+            <h3 style="color:#1e6b4e;">+8,000</h3>
+            <p>Visitantes felices</p>
+        </div>
+        <div style="background:white; padding:25px; border-radius:15px; box-shadow:0 8px 25px rgba(0,0,0,0.1); width:280px;">
+            <h3 style="color:#1e6b4e;">100%</h3>
+            <p>Guías y proveedores locales</p>
+        </div>
+    </div>
+</div>
+
+<footer><p>© 2025 Turismo en Coclé</p></footer>
+<script src="JS.js"></script>
+</body>
+</html>

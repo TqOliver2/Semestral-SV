@@ -1,0 +1,327 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f9f5f0;     /* Crema muy suave */
+    color: #443322;          /* Marrón chocolate oscuro para texto */
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #8b6f47;     /* Marrón dorado elegante (chocolate con oro) */
+    color: #fff8e7;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #fff8e7;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links li a {
+    color: #fff8e7;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color .3s;
+}
+
+.nav-links li a:hover,
+.nav-links li a:active {
+    color: #ffefc1;          /* Dorado muy claro */
+}
+
+/* Página actual destacada (como tienes en tu HTML) */
+.nav-links li a[style*="b8860b"],
+.nav-links li a[style*="bold"] {
+    color: #d4af37 !important;   /* Oro antiguo */
+    font-weight: bold !important;
+}
+
+/* RESPONSIVE MENU */
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff8e7;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #8b6f47;
+        width: 220px;
+        flex-direction: column;
+        display: none;
+        padding: 20px;
+        border-radius: 0 0 0 15px;
+        box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* CONTENIDO */
+.container {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #8b6f47;
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #8b6f47;
+    margin: 35px 0 15px;
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;     /* Línea dorada debajo de los títulos */
+}
+
+/* IMÁGENES PRINCIPALES */
+.container > img {
+    border: 6px solid #fff;
+    box-shadow: 0 8px 20px rgba(139, 111, 71, 0.2);
+}
+
+/* TARJETAS DE TOURS */
+.cards {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.card {
+    background: #ffffff;
+    width: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(139, 111, 71, 0.15);
+    transition: all .4s ease;
+    border: 1px solid #e8dcc1;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 16px 35px rgba(139, 111, 71, 0.25);
+}
+
+.card h3 {
+    color: #8b6f47;
+    padding: 15px 20px 8px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    padding: 0 20px;
+    color: #665039;
+}
+
+.card strong {
+    display: block;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    color: #d4af37;
+}
+
+.card button {
+    width: 100%;
+    padding: 15px;
+    background: #8b6f47;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background .3s;
+    margin-top: 10px;
+}
+
+.card button:hover {
+    background: #a67c52;
+}
+
+/* CAJA "SOBRE NOSOTROS" */
+p[style*="fdfd96"] {
+    background: #fff8e7 !important;
+    border-left: 5px solid #d4af37;
+    padding: 25px !important;
+    font-style: italic;
+    color: #665039;
+}
+
+/* FORMULARIO */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(139, 111, 71, 0.15);
+    margin: 40px auto;
+}
+
+form input,
+form textarea {
+    padding: 14px;
+    border: 1.5px solid #d4c19e;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+}
+
+form button {
+    background: #8b6f47 !important;
+    color: white !important;
+    padding: 16px 30px !important;
+    font-size: 18px !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+form button:hover {
+    background: #a67c52 !important;
+}
+
+/* FOOTER */
+footer {
+    background: #443322;
+    color: #fff8e7;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        max-width: 380px;
+    }
+    
+    h1 {
+        font-size: 2.3rem;
+    }
+}
+
+/* === NAV DERECHA – VERSIÓN EL CAÑO (ORO / CHOCOLATE) === */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.sitios-select {
+    padding: 10px 14px;
+    border: 2px solid #fff8e7;
+    border-radius: 10px;
+    background: white;
+    color: #8b6f47;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s;
+}
+
+.sitios-select:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+}
+
+.nav-btn {
+    background: #d4af37;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    white-space: nowrap;
+    transition: all .3s ease;
+    box-shadow: 0 2px 6px rgba(212,175,55,0.4);
+}
+
+.nav-btn:hover {
+    background: #c19a2e;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(212,175,55,0.5);
+}
+
+.nav-btn.active {
+    background: #a67c52 !important;
+    font-weight: bold;
+}
+
+/* Móvil */
+@media (max-width: 868px) {
+    .nav-right {
+        position: absolute;
+        right: 15px;
+        top: 70px;
+        background: #8b6f47;
+        flex-direction: column;
+        padding: 15px;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        gap: 12px;
+        z-index: 999;
+        display: none;
+    }
+    .nav-right.show { display: flex; }
+    .sitios-select, .nav-btn { width: 220px; text-align: center; }
+}

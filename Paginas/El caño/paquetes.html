@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquetes El Caño - Turismo en Coclé</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Turismo Coclé</div>
+    <div class="nav-right">
+        <select class="sitios-select" onchange="if(this.value) window.location.href=this.value">
+            <option value="" selected disabled>Sitios Turísticos</option>
+            <option value="../Inicio.html">Inicio</option>
+            <option value="../El Valle de Antón/el valle.html">El Valle de Antón</option>
+            <option value="../Playa Santa Clara/santa-clara.html">Playa Santa Clara</option>
+            <option value="El caño/El cano.html">El Caño</option>
+        </select>
+        <a href="paquetes.html" class="nav-btn">Venta de Paquetes</a>
+        <a href="sobre-nosotros.html" class="nav-btn">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-btn">Contacto</a>
+    </div>
+    <div class="menu-btn" id="menuBtn">Menú</div>
+</nav>
+
+<div class="container" style="margin-top:90px;">
+    <h1 style="text-align:center; color:#8b6f47;">Paquetes y Tours – El Caño Arqueológico</h1>
+    <p style="text-align:center; font-size:19px; max-width:900px; margin:20px auto 40px; color:#665039;">
+        Experiencias únicas con guías certificados y arqueólogos
+    </p>
+
+    <div class="cards">
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.gLBPnUC63VOJNeY7p28ZugHaE6" alt="El Caño">
+            <h3>Tour Histórico + El Valle</h3>
+            <p>Visita guiada al sitio + almuerzo + traslado al Valle de Antón</p>
+            <strong>$130 por persona</strong>
+            <button onclick="document.getElementById('formulario').scrollIntoView()">Reservar</button>
+        </div>
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.gLBPnUC63VOJNeY7p28ZugHaE6" alt="El Caño VIP">
+            <h3>Tour Privado Exclusivo</h3>
+            <p>Acceso especial + arqueólogo personal + fotos profesionales</p>
+            <strong>$220 por persona (mín. 4)</strong>
+            <button onclick="document.getElementById('formulario').scrollIntoView()">Consultar</button>
+        </div>
+    </div>
+
+    <h2 id="formulario" style="margin-top:50px;">Reserva tu experiencia</h2>
+    <form action="https://formspree.io/f/xkgjrrwp" method="POST" style="max-width:600px; margin:0 auto;">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp" required>
+        <input type="hidden" name="destino" value="El Caño - Tour Arqueológico">
+        <textarea name="mensaje" rows="5" placeholder="Fecha deseada, número de personas y tour de interés" required></textarea>
+        <button type="submit">Enviar reserva</button>
+    </form>
+</div>
+
+<footer><p>© 2025 Turismo en Coclé</p></footer>
+<script src="../JS.js"></script>
+</body>
+</html>

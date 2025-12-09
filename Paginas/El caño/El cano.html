@@ -4,27 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>El Caño - Turismo en Coclé</title>
-    <link rel="stylesheet" href="Stilo1.css">
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 
 <nav class="navbar">
     <div class="logo">Turismo Coclé</div>
-    <ul class="nav-links">
-        <li><a href="../index.html">Inicio</a></li>
-        <li><a href="../El Valle de Antón/el valle.html">El Valle de Antón</a></li>
-        <li><a href="../Playa Santa Clara/santa-clara.html">Playa Santa Clara</a></li>
-        <li><a href="El cano.html" style="color:#b8860b; font-weight:bold;">El Caño</a></li>
-    </ul>
-    <div class="menu-btn" id="menuBtn">☰</div>
+
+    <!-- NUEVO NAVBAR DERECHA -->
+    <div class="nav-right">
+        <select class="sitios-select" onchange="if(this.value) window.location.href=this.value">
+            <option value="" selected disabled>Sitios Turísticos</option>
+            <option value="../Inicio.html">Inicio</option>
+            <option value="../El Valle de Antón/el valle.html">El Valle de Antón</option>
+            <option value="../Playa Santa Clara/santa-clara.html">Playa Santa Clara</option>
+            <option value="El cano.html">El Caño</option>
+        </select>
+
+        <a href="paquetes.html" class="nav-btn">Venta de Paquetes</a>
+        <a href="sobre-nosotros.html" class="nav-btn">Sobre Nosotros</a>
+        <a href="contacto.html" class="nav-btn">Contacto</a>
+    </div>
+
+    <div class="menu-btn" id="menuBtn">Menú</div>
 </nav>
 
-<div class="container" style="margin-top:80px;">
+<div class="container" style="margin-top:90px;">
 
-    <h1 style="text-align:center; color:#b8860b;">Sitio Arqueológico El Caño</h1>
-    <img src="https://tse1.mm.bing.net/th/id/OIP.gLBPnUC63VOJNeY7p28ZugHaE6?rs=1&pid=ImgDetMain" style="width:100%; border-radius:15px; margin:20px 0;">
-    <p style="font-size:18px; line-height:1.8;">
-        Uno de los yacimientos más importantes de América precolombina. 
+    <h1 style="text-align:center; color:#8b6f47;">Sitio Arqueológico El Caño</h1>
+    <img src="https://tse1.mm.bing.net/th/id/OIP.gLBPnUC63VOJNeY7p28ZugHaE6?rs=1&pid=ImgDetMain" 
+         alt="El Caño" 
+         style="width:100%; max-height:520px; object-fit:cover; border-radius:20px; border:7px solid white; box-shadow:0 12px 35px rgba(139,111,71,0.25); margin:25px 0;">
+
+    <p style="font-size:18px; line-height:1.8; text-align:center; max-width:900px; margin:0 auto 40px; color:#443322;">
+        Uno de los yacimientos más importantes de América precolombina.<br>
         Tumbas de jefes con piezas de oro de hace más de 1200 años.
     </p>
 
@@ -32,26 +45,32 @@
     <div class="cards">
         <div class="card">
             <h3>Tour Histórico + El Valle</h3>
-            <p>Visita guiada al sitio + almuerzo + traslado al Valle</p>
+            <p>Visita guiada al sitio + almuerzo + traslado al Valle de Antón</p>
             <strong>$130 por persona</strong>
-            <button onclick="document.getElementById('formulario').scrollIntoView()">Reservar</button>
+            <button onclick="document.getElementById('formulario').scrollIntoView()">Reservar ahora</button>
         </div>
     </div>
 
-    <h2>Sobre Nosotros</h2>
-    <p style="background:#fdfd96; padding:20px; border-radius:10px;">
+    <h2 style="margin-top:50px;">Sobre Nosotros</h2>
+    <p style="background:#fff8e7; padding:30px; border-radius:16px; border-left:6px solid #d4af37; font-size:17px; text-align:center; max-width:900px; margin:0 auto;">
         Trabajamos con arqueólogos y guías certificados para que tu visita sea educativa y respetuosa con el patrimonio.
     </p>
 
-    <h2 id="formulario">Reserva tu tour</h2>
-    <form action="https://formspree.io/f/xkgjrrwp" method="POST" style="display:grid; gap:15px; max-width:600px; margin:0 auto;">
-        <input type="text" name="nombre" placeholder="Nombre" required>
+    <h2 id="formulario">Reserva tu tour arqueológico</h2>
+    <form action="https://formspree.io/f/xkgjrrwp" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre completo" required>
         <input type="email" name="email" placeholder="Email" required>
-        <input type="tel" name="telefono" placeholder="Teléfono/WhatsApp">
+        <input type="tel" name="telefono" placeholder="Teléfono / WhatsApp">
         <input type="hidden" name="destino" value="El Caño">
-        <textarea name="mensaje" rows="5" placeholder="Fecha y número de personas" required></textarea>
-        <button type="submit" style="padding:15px; background:#b8860b; color:white; border:none; font-size:18px;">Enviar</button>
+        <textarea name="mensaje" rows="5" placeholder="Fecha deseada y número de personas" required></textarea>
+        <button type="submit">Enviar reserva</button>
     </form>
+
+    <div style="text-align:center; margin:50px 0;">
+        <p style="background:#fff8e7; display:inline-block; padding:15px 35px; border-radius:50px; font-size:19px; color:#8b6f47;">
+            WhatsApp: <a href="https://wa.me/50769998888" style="color:#d4af37; font-weight:bold;">+507 6999-8888</a>
+        </p>
+    </div>
 </div>
 
 <footer><p>© 2025 Turismo en Coclé</p></footer>
