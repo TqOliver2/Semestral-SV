@@ -85,5 +85,32 @@
 
 <script src="../JS.js"></script>
 <script src="contacto-validation.js"></script>
+<!-- CHATBOT LOCAL - Turismo Coclé -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div id="chatbot-container">
+    <div id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div id="chatbot-window">
+        <div id="chatbot-header">
+            Turismo Coclé
+            <span id="chatbot-close">×</span>
+        </div>
+        <div id="chatbot-messages">
+            <div class="bot-message">
+                ¡Hola! 👋<br>
+                Soy tu asistente de Turismo Coclé.<br>
+                ¿En qué tour estás interesado?
+            </div>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" id="user-input" placeholder="Escribe aquí..." autocomplete="off">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../chatbot-style.css">
+<script src="../chatbot-script.js"></script>
 </body>
 </html>

@@ -1,4 +1,8 @@
-/* RESET */
+/* ============================================= */
+/*  STYLE.CSS - TURISMO COCLÉ (DORADO / CHOCOLATE) */
+/*  100% LISTO PARA COPIAR Y PEGAR              */
+/* ============================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +11,15 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #eef5fb;
-    color: #1b3c59;
+    background: #f9f5f0;     /* Crema suave */
+    color: #443322;          /* Marrón chocolate oscuro */
     line-height: 1.6;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
-    background: #005b96;
-    color: white;
+    background: #8b6f47;     /* Marrón dorado elegante */
+    color: #fff8e7;
     padding: 16px 30px;
     display: flex;
     justify-content: space-between;
@@ -30,6 +34,7 @@ body {
 .logo {
     font-size: 26px;
     font-weight: bold;
+    color: #fff8e7;
 }
 
 /* NAV DERECHA */
@@ -40,42 +45,54 @@ body {
 }
 
 .sitios-select {
-    padding: 10px;
-    border-radius: 10px;
+    padding: 10px 16px;
+    border-radius: 12px;
     background: white;
-    border: 2px solid #bcd7ea;
-    color: #005b96;
+    border: 2px solid #fff8e7;
+    color: #8b6f47;
     cursor: pointer;
     font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: all .3s;
 }
 
-/* BOTONES */
+.sitios-select:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.2);
+}
+
+/* BOTONES DEL NAVBAR */
 .nav-btn {
-    background: #0077c8;
+    background: #d4af37;     /* Dorado */
     color: white;
     padding: 10px 18px;
-    border-radius: 10px;
+    border-radius: 12px;
     text-decoration: none;
     font-weight: 600;
-    transition: .3s;
+    transition: all .3s;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.3);
 }
 
 .nav-btn:hover {
-    background: #005b96;
+    background: #c19a2e;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(212,175,55,0.4);
 }
 
-.active {
-    background: #003f63 !important;
+.active, .nav-btn.active {
+    background: #a67c52 !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
 }
 
 /* RESPONSIVE MENU */
 .menu-btn {
     display: none;
     cursor: pointer;
-    background: #0077c8;
+    background: #d4af37;
     color: white;
-    padding: 8px 14px;
-    border-radius: 10px;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: bold;
 }
 
 @media (max-width: 868px) {
@@ -88,16 +105,23 @@ body {
         position: absolute;
         right: 15px;
         top: 70px;
-        background: #005b96;
+        background: #8b6f47;
         padding: 20px;
-        border-radius: 12px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        gap: 14px;
+        z-index: 9999;
     }
     .nav-right.show {
         display: flex;
     }
+    .sitios-select, .nav-btn {
+        width: 220px;
+        text-align: center;
+    }
 }
 
-/* CONTENIDO */
+/* ================= CONTENIDO ================= */
 .container {
     max-width: 1200px;
     margin: auto;
@@ -107,11 +131,11 @@ body {
 h1 {
     text-align: center;
     font-size: 2.8rem;
-    color: #003f63;
+    color: #8b6f47;
     margin-bottom: 20px;
 }
 
-/* TARJETAS */
+/* ================= TARJETAS ================= */
 .cards {
     display: flex;
     gap: 25px;
@@ -124,13 +148,14 @@ h1 {
     width: 320px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,91,150,0.15);
+    box-shadow: 0 8px 25px rgba(139,111,71,0.15);
     transition: .3s;
+    border: 1px solid #e8dcc1;
 }
 
 .card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 12px 35px rgba(0,91,150,0.25);
+    box-shadow: 0 12px 35px rgba(139,111,71,0.25);
 }
 
 .card img {
@@ -141,57 +166,61 @@ h1 {
 
 .card h3 {
     padding: 14px 20px 8px;
-    color: #005b96;
+    color: #8b6f47;
+    font-size: 1.4rem;
 }
 
 .card p {
     padding: 0 20px;
-    color: #1b3c59;
+    color: #665039;
 }
 
 .card strong {
     padding: 12px 20px;
     display: block;
     font-size: 1.5rem;
-    color: #0077c8;
+    color: #d4af37;
 }
 
 .card button {
     width: 100%;
     padding: 15px;
-    background: #005b96;
+    background: #8b6f47;
     color: white;
     border: none;
     font-size: 1.1rem;
     cursor: pointer;
+    transition: background .3s;
 }
 
 .card button:hover {
-    background: #003f63;
+    background: #a67c52;
 }
 
-/* CARRITO */
+/* ================= CARRITO ================= */
 #carrito {
     background: white;
     max-width: 700px;
     margin: 50px auto;
     padding: 25px;
     border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,91,150,0.15);
+    box-shadow: 0 8px 25px rgba(139,111,71,0.15);
+    border: 1px solid #e8dcc1;
 }
 
 #carrito h2 {
-    color: #003f63;
+    color: #8b6f47;
 }
 
 #carrito li {
     padding: 10px 0;
-    border-bottom: 1px solid #e1e9f0;
+    border-bottom: 1px solid #e8dcc1;
+    color: #443322;
 }
 
 #total {
     font-weight: bold;
-    color: #0077c8;
+    color: #d4af37;
     margin-top: 10px;
     font-size: 1.2rem;
 }
@@ -199,18 +228,19 @@ h1 {
 #finalizarBtn {
     width: 100%;
     padding: 14px;
-    background: #0077c8;
+    background: #d4af37;
     border: none;
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 #finalizarBtn:hover {
-    background: #005b96;
+    background: #c19a2e;
 }
 
-/* FORMULARIO */
+/* ================= FORMULARIO COMPRA ================= */
 #formularioCompra {
     display: none;
     background: white;
@@ -218,35 +248,46 @@ h1 {
     margin: 30px auto;
     padding: 25px;
     border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(0,91,150,0.15);
+    box-shadow: 0 8px 25px rgba(139,111,71,0.15);
+    border: 1px solid #e8dcc1;
 }
 
 #formularioCompra input,
 #formularioCompra textarea {
     width: 100%;
     padding: 14px;
-    border: 1px solid #bcd7ea;
-    border-radius: 8px;
+    border: 1.5px solid #d4c19e;
+    border-radius: 12px;
     margin-bottom: 15px;
+    font-size: 16px;
+}
+
+#formularioCompra input:focus,
+#formularioCompra textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
 }
 
 #formularioCompra button {
     width: 100%;
     padding: 14px;
-    background: #005b96;
+    background: #8b6f47;
     color: white;
-    border-radius: 8px;
+    border-radius: 12px;
+    font-size: 1.2rem;
+    font-weight: bold;
 }
 
 #formularioCompra button:hover {
-    background: #003f63;
+    background: #a67c52;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
-    background: #003f63;
+    background: #443322;
     text-align: center;
     padding: 20px;
-    color: white;
+    color: #fff8e7;
     margin-top: 60px;
 }

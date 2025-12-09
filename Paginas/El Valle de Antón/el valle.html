@@ -35,7 +35,7 @@
 <div class="container" style="margin-top:80px;">
 
     <!-- INFORMACIÓN DEL LUGAR -->
-    <h1 style="text-align:center; color:#2e8b57;">El Valle de Antón</h1>
+    <h1 style="text-align:center; color:#414241;">El Valle de Antón</h1>
     <img src="https://i.pinimg.com/1200x/f7/25/45/f72545855fc2d894d3100db2c0113a3a.jpg" style="width:100%; border-radius:15px; margin:20px 0;">
     <p style="font-size:18px; line-height:1.8;">
         Pueblo mágico dentro de un cráter volcánico. Clima fresco todo el año (18-24°C). 
@@ -75,5 +75,32 @@
     <p>© 2025 Turismo en Coclé</p>
 </footer>
 <script src="JS.js"></script>
+<!-- CHATBOT LOCAL - Turismo Coclé -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<div id="chatbot-container">
+    <div id="chatbot-toggle">
+        <i class="fas fa-comments"></i>
+    </div>
+    <div id="chatbot-window">
+        <div id="chatbot-header">
+            Turismo Coclé
+            <span id="chatbot-close">×</span>
+        </div>
+        <div id="chatbot-messages">
+            <div class="bot-message">
+                ¡Hola! 👋<br>
+                Soy tu asistente de Turismo Coclé.<br>
+                ¿En qué tour estás interesado?
+            </div>
+        </div>
+        <div id="chatbot-input">
+            <input type="text" id="user-input" placeholder="Escribe aquí..." autocomplete="off">
+            <button id="send-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" href="../chatbot-style.css">
+<script src="../chatbot-script.js"></script>
 </body>
 </html>
