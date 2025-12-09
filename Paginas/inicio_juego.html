@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Color Rush | Juego Creativo</title>
+  <link rel="stylesheet" href="style_juego.css" />
+</head>
+<body>
+
+  <!-- Cursor personalizado -->
+  <div class="custom-cursor"></div>
+
+  <!-- Canvas de bolas de fondo -->
+  <canvas class="bg-balls" id="bg-balls"></canvas>
+
+  <!-- Canvas de partículas (explosiones) -->
+  <canvas class="particles" id="particles"></canvas>
+
+  <section id="game-section">
+    <h1>Color Rush</h1>
+
+    <div class="ui">
+      Puntaje: <span id="score">0</span><br>
+      Tiempo restante: <span id="timeLeft">60</span>s
+    </div>
+
+    <div class="phase" id="phase">¡Atrapa ROJAS!</div>
+
+    <canvas id="game" width="800" height="600"></canvas>
+
+    <button onclick="resetGame()">Reiniciar Juego</button>
+
+    <div class="best">
+      Mejor puntaje: <span id="bestScore">0</span>
+    </div>
+
+    <!-- Pantalla de Game Over -->
+    <div id="game-over" class="game-over">
+      <h2>¡Tiempo Agotado!</h2>
+      <p class="final-score">Puntaje final: <span id="final-score">0</span></p>
+      <p class="final-best">Mejor puntaje: <span id="final-best">0</span></p>
+      <button onclick="resetGame()">¡Jugar de Nuevo!</button>
+    </div>
+  </section>
+
+  <script src="script_juego.js"></script>
+</body>
+</html>

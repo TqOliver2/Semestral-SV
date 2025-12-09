@@ -1,41 +1,63 @@
-body {
-    margin: 0;
-    font-family: Arial;
-    background: #f8f8f8;
-}
-
 /* NAVBAR */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 15px;
     background: #1b3c59;
     color: white;
+    padding: 14px 25px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+    position: fixed;      /* <--- MENÚ SIEMPRE ARRIBA */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;        /* <--- EVITA QUE EL SLIDER LO TAPE */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
-.nav-links a {
+.nav-links li a {
     color: white;
     text-decoration: none;
-    padding: 5px 10px;
+    font-size: 17px;
+    transition: color .3s;
 }
 
-.nav-links a.active {
-    background: #ffffff33;
-    border-radius: 4px;
+.nav-links li a:hover {
+    color: #bcd4e6;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
     background: white;
-    padding: 10px;
+    list-style: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 10px 0;
+}
+
+.dropdown-content li a {
+    color: #333;
+    display: block;
+    padding: 8px 15px;
+}
+
+.dropdown-content li a:hover {
+    background: #e9eef3;
 }
 
 .dropdown:hover .dropdown-content {
