@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin</title>
+    <link rel="stylesheet" href="reservaciones.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Turismo Coclé</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="Inicio.html">Inicio</a></li>
+        <li class="dropdown">
+            <a href="#">Sitios Turísticos ▼</a>
+            <ul class="dropdown-content">
+                <li><a href="El Valle de Antón/el valle.html">El Valle de Antón</a></li>
+                <li><a href="Playa Santa Clara/santa-clara.html">Playa Santa Clara</a></li>
+                <li><a href="El caño/El cano.html">El Caño</a></li>
+            </ul>
+        </li>
+        <li><a href="contacto_nosotros.html">Nosotros & Contacto</a></li>
+        <li><a href="reservaciones.html">Reservaciones</a></li>
+        <li><a href="login.html">Inicio de Sesión</a></li>
+    </ul>
+
+    <div class="menu-btn" id="menuBtn">☰</div>
+</nav>
+
+<h1 class="admin-title">Panel de Reservas</h1>
+
+<div class="admin-list" id="adminReservas"></div>
+
+<script src="reservaciones.js"></script>
+<script>
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+    });
+</script>
+
+</body>
+</html>
