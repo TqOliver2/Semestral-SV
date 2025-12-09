@@ -218,5 +218,27 @@ footer {
 
 /* RESPONSIVE GENERAL */
 @media (max-width: 768px) {
+<<<<<<< HEAD
     #carrito, #formularioCompra { width: 92%; }
 }
+=======
+    #carrito,
+    #formularioCompra {
+        width: 92%;
+    }
+}
+.btn-quitar {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 6px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    float: right;
+    font-size: 14px;
+}
+
+.btn-quitar:hover {
+    background: #922b21;
+}
+>>>>>>> 1e95bd3e6f3a5ce0d93d22ab75b5fed465badb43

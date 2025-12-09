@@ -13,13 +13,22 @@ function agregarCarrito(nombre, precio) {
     actualizarCarrito();
 }
 
+function quitarCarrito(indice) {
+    total -= carrito[indice].precio;
+    carrito.splice(indice, 1);
+    actualizarCarrito();
+}
+
 function actualizarCarrito() {
     const lista = document.getElementById("listaCarrito");
     lista.innerHTML = "";
 
-    carrito.forEach(item => {
+    carrito.forEach((item, i) => {
         const li = document.createElement("li");
-        li.textContent = `${item.nombre} - $${item.precio}`;
+        li.innerHTML = `
+            ${item.nombre} - $${item.precio}
+            <button class="btn-quitar" onclick="quitarCarrito(${i})">Quitar</button>
+        `;
         lista.appendChild(li);
     });
 
