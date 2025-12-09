@@ -7,14 +7,14 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f9f5f0;     /* Crema muy suave */
-    color: #443322;          /* Marrón chocolate oscuro para texto */
+    background: #f9f5f0;
+    color: #443322;
     line-height: 1.6;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
-    background: #8b6f47;     /* Marrón dorado elegante (chocolate con oro) */
+    background: #8b6f47;
     color: #fff8e7;
     padding: 16px 30px;
     display: flex;
@@ -34,33 +34,62 @@ body {
     color: #fff8e7;
 }
 
-.nav-links {
-    list-style: none;
+/* NAV DERECHA - BOTONES PEQUEÑOS Y BONITOS */
+.nav-right {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.nav-links li a {
-    color: #fff8e7;
+.sitios-select {
+    padding: 10px 14px;
+    border: 2px solid #fff8e7;
+    border-radius: 12px;
+    background: white;
+    color: #8b6f47;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 170px;
+}
+
+.sitios-select:focus {
+    border-color: #d4af37;
+    box-shadow: 0 0 0 4px rgba(212,175,55,0.2);
+}
+
+.nav-btn {
+    background: #d4af37;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 12px;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    transition: color .3s;
+    font-weight: 600;
+    font-size: 14.5px;
+    transition: all .3s ease;
+    box-shadow: 0 4px 12px rgba(212,175,55,0.3);
+    white-space: nowrap;
+    min-width: 130px;
+    text-align: center;
 }
 
-.nav-links li a:hover,
-.nav-links li a:active {
-    color: #ffefc1;          /* Dorado muy claro */
+.nav-btn:hover {
+    background: #c19a2e;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(212,175,55,0.4);
 }
 
-/* Página actual destacada (como tienes en tu HTML) */
-.nav-links li a[style*="b8860b"],
-.nav-links li a[style*="bold"] {
-    color: #d4af37 !important;   /* Oro antiguo */
-    font-weight: bold !important;
+.nav-btn.active {
+    background: #a67c52 !important;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
 }
 
-/* RESPONSIVE MENU */
+/* MENÚ MÓVIL */
 .menu-btn {
     display: none;
     font-size: 30px;
@@ -68,36 +97,40 @@ body {
     color: #fff8e7;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
+@media (max-width: 868px) {
+    .menu-btn { display: block; }
+
+    .nav-right {
         position: absolute;
-        top: 65px;
-        right: 0;
+        top: 70px;
+        right: 15px;
         background: #8b6f47;
-        width: 220px;
-        flex-direction: column;
-        display: none;
         padding: 20px;
-        border-radius: 0 0 0 15px;
-        box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        flex-direction: column;
+        gap: 14px;
+        display: none;
+        z-index: 9999;
     }
 
-    .nav-links.show {
-        display: flex;
-    }
+    .nav-right.show { display: flex; }
 
-    .menu-btn {
-        display: block;
+    .sitios-select, .nav-btn {
+        width: 210px;
+        padding: 12px 16px;
+        text-align: center;
     }
 }
 
-/* CONTENIDO */
+/* ================= CONTENIDO ================= */
 .container {
     padding: 30px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
+/* TÍTULOS */
 h1 {
     text-align: center;
     color: #8b6f47;
@@ -120,16 +153,123 @@ h2::after {
     bottom: 0;
     width: 60px;
     height: 3px;
-    background: #d4af37;     /* Línea dorada debajo de los títulos */
+    background: #d4af37;
 }
 
-/* IMÁGENES PRINCIPALES */
-.container > img {
-    border: 6px solid #fff;
-    box-shadow: 0 8px 20px rgba(139, 111, 71, 0.2);
+/* GRID CONTACTO */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
-/* TARJETAS DE TOURS */
+.contact-info {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.whatsapp-box {
+    background: #fff8e7;
+    padding: 35px;
+    border-radius: 20px;
+    margin: 30px 0;
+    border-left: 6px solid #d4af37;
+}
+
+.whatsapp-btn {
+    background: #d4af37;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 40px;
+    transition: all .3s;
+}
+
+.whatsapp-btn:hover {
+    background: #c19a2e;
+    transform: translateY(-3px);
+}
+
+/* ================= FORMULARIO Y VALIDACIÓN ================= */
+.form-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 6px;
+    display: none;
+    font-weight: 500;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231,76,60,0.15) !important;
+}
+
+.form-group.success input,
+.form-group.success textarea {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.15) !important;
+}
+
+.success-message {
+    background: #fff8e7;
+    color: #8b6f47;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #d4af37;
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+    box-shadow: 0 6px 18px rgba(139,111,71,0.15);
+}
+
+/* Estilos generales del formulario */
+form input,
+form textarea {
+    padding: 14px;
+    border: 1.5px solid #d4c19e;
+    border-radius: 8px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+form input:focus,
+form textarea:focus {
+    outline: none;
+    border-color: #d4af37;
+    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
+}
+
+form button {
+    background: #8b6f47 !important;
+    color: white !important;
+    padding: 16px 30px !important;
+    font-size: 18px !important;
+    border-radius: 8px !important;
+    cursor: pointer;
+    transition: background .3s;
+    width: 100%;
+}
+
+form button:hover {
+    background: #a67c52 !important;
+}
+
+/* ================= TARJETAS Y RESTO ================= */
 .cards {
     display: flex;
     gap: 25px;
@@ -143,97 +283,21 @@ h2::after {
     width: 320px;
     border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(139, 111, 71, 0.15);
+    box-shadow: 0 8px 25px rgba(139,111,71,0.15);
     transition: all .4s ease;
     border: 1px solid #e8dcc1;
 }
 
 .card:hover {
     transform: translateY(-12px);
-    box-shadow: 0 16px 35px rgba(139, 111, 71, 0.25);
+    box-shadow: 0 16px 35px rgba(139,111,71,0.25);
 }
 
-.card h3 {
-    color: #8b6f47;
-    padding: 15px 20px 8px;
-    font-size: 1.4rem;
-}
-
-.card p {
-    padding: 0 20px;
-    color: #665039;
-}
-
-.card strong {
-    display: block;
-    padding: 10px 20px;
-    font-size: 1.5rem;
-    color: #d4af37;
-}
-
-.card button {
-    width: 100%;
-    padding: 15px;
-    background: #8b6f47;
-    color: white;
-    border: none;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background .3s;
-    margin-top: 10px;
-}
-
-.card button:hover {
-    background: #a67c52;
-}
-
-/* CAJA "SOBRE NOSOTROS" */
-p[style*="fdfd96"] {
-    background: #fff8e7 !important;
-    border-left: 5px solid #d4af37;
-    padding: 25px !important;
-    font-style: italic;
-    color: #665039;
-}
-
-/* FORMULARIO */
-form {
-    background: white;
-    padding: 30px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(139, 111, 71, 0.15);
-    margin: 40px auto;
-}
-
-form input,
-form textarea {
-    padding: 14px;
-    border: 1.5px solid #d4c19e;
-    border-radius: 8px;
-    font-size: 16px;
-    width: 100%;
-}
-
-form input:focus,
-form textarea:focus {
-    outline: none;
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
-}
-
-form button {
-    background: #8b6f47 !important;
-    color: white !important;
-    padding: 16px 30px !important;
-    font-size: 18px !important;
-    border-radius: 8px !important;
-    cursor: pointer;
-    transition: background .3s;
-}
-
-form button:hover {
-    background: #a67c52 !important;
-}
+.card h3 { color: #8b6f47; padding: 15px 20px 8px; font-size: 1.4rem; }
+.card p { padding: 0 20px; color: #665039; }
+.card strong { display: block; padding: 10px 20px; font-size: 1.5rem; color: #d4af37; }
+.card button { width: 100%; padding: 15px; background: #8b6f47; color: white; border: none; font-size: 1.1rem; cursor: pointer; transition: background .3s; margin-top: 10px; }
+.card button:hover { background: #a67c52; }
 
 /* FOOTER */
 footer {
@@ -247,81 +311,8 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    .card {
-        width: 100%;
-        max-width: 380px;
-    }
-    
-    h1 {
-        font-size: 2.3rem;
-    }
-}
-
-/* === NAV DERECHA – VERSIÓN EL CAÑO (ORO / CHOCOLATE) === */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-.sitios-select {
-    padding: 10px 14px;
-    border: 2px solid #fff8e7;
-    border-radius: 10px;
-    background: white;
-    color: #8b6f47;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    outline: none;
-    transition: all .3s;
-}
-
-.sitios-select:focus {
-    border-color: #d4af37;
-    box-shadow: 0 0 0 3px rgba(212,175,55,0.2);
-}
-
-.nav-btn {
-    background: #d4af37;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14.5px;
-    white-space: nowrap;
-    transition: all .3s ease;
-    box-shadow: 0 2px 6px rgba(212,175,55,0.4);
-}
-
-.nav-btn:hover {
-    background: #c19a2e;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(212,175,55,0.5);
-}
-
-.nav-btn.active {
-    background: #a67c52 !important;
-    font-weight: bold;
-}
-
-/* Móvil */
-@media (max-width: 868px) {
-    .nav-right {
-        position: absolute;
-        right: 15px;
-        top: 70px;
-        background: #8b6f47;
-        flex-direction: column;
-        padding: 15px;
-        border-radius: 14px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        gap: 12px;
-        z-index: 999;
-        display: none;
-    }
-    .nav-right.show { display: flex; }
-    .sitios-select, .nav-btn { width: 220px; text-align: center; }
+    .card { width: 100%; max-width: 380px; }
+    h1 { font-size: 2.3rem; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .contact-info { text-align: center; }
 }

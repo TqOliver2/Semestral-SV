@@ -7,14 +7,14 @@
 
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: #f5f9f6;     /* Verde crema muy suave */
-    color: #2d4a3a;          /* Verde bosque oscuro para texto */
+    background: #f5f9f6;
+    color: #2d4a3a;
     line-height: 1.7;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
-    background: #1e6b4e;     /* Verde selva profundo elegante */
+    background: #1e6b4e;
     color: #e8f5e9;
     padding: 16px 30px;
     display: flex;
@@ -34,32 +34,65 @@ body {
     color: #e8f5e9;
 }
 
-.nav-links {
-    list-style: none;
+/* ================= NAV DERECHA - BOTONES PEQUEÑOS IGUALES A PAQUETES ================= */
+.nav-right {
     display: flex;
-    gap: 32px;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
 }
 
-.nav-links li a {
-    color: #e8f5e9;
+/* Select - Sitios Turísticos */
+.sitios-select {
+    padding: 10px 14px;
+    border: 2px solid #e8f5e9;
+    border-radius: 12px;
+    background: white;
+    color: #1e6b4e;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all .3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    min-width: 180px;
+}
+
+.sitios-select:focus {
+    border-color: #3ba36a;
+    box-shadow: 0 0 0 4px rgba(59, 163, 106, 0.2);
+}
+
+/* Botones del navbar - EXACTAMENTE IGUALES A LOS DE PAQUETES */
+.nav-btn {
+    background: #1e6b4e;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 12px;
     text-decoration: none;
-    font-size: 17px;
-    font-weight: 500;
-    transition: color .3s;
+    font-weight: 600;
+    font-size: 14.5px;
+    transition: all .3s ease;
+    box-shadow: 0 4px 12px rgba(30, 107, 78, 0.2);
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    min-width: 130px;
 }
 
-.nav-links li a:hover {
-    color: #b2e4c5;
+.nav-btn:hover {
+    background: #2e8b57;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(30, 107, 78, 0.3);
 }
 
-/* Página activa destacada (como tienes en tu HTML con verde) */
-.nav-links li a[style*="2e8b57"],
-.nav-links li a[style*="bold"] {
-    color: #3ba36a !important;   /* Verde más vivo para resaltar */
-    font-weight: bold !important;
+.nav-btn.active {
+    background: #155f3e;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    transform: translateY(-2px);
 }
 
-/* RESPONSIVE MENU */
+/* ================= MENÚ MÓVIL ================= */
 .menu-btn {
     display: none;
     font-size: 30px;
@@ -67,30 +100,39 @@ body {
     color: #e8f5e9;
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        position: absolute;
-        top: 65px;
-        right: 0;
-        background: #1e6b4e;
-        width: 220px;
-        flex-direction: column;
-        display: none;
-        padding: 20px;
-        border-radius: 0 0 0 15px;
-        box-shadow: -2px 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
+@media (max-width: 868px) {
     .menu-btn {
         display: block;
     }
+
+    .nav-right {
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        background: #1e6b4e;
+        padding: 18px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        flex-direction: column;
+        gap: 14px;
+        display: none;
+        z-index: 9999;
+    }
+
+    .nav-right.show {
+        display: flex;
+    }
+
+    .sitios-select,
+    .nav-btn {
+        width: 210px;
+        padding: 12px 16px;
+        font-size: 15px;
+        text-align: center;
+    }
 }
 
-/* CONTENIDO */
+/* ================= CONTENIDO GENERAL ================= */
 .container {
     padding: 30px 20px;
     max-width: 1200px;
@@ -119,7 +161,7 @@ h2::after {
     bottom: 0;
     width: 70px;
     height: 4px;
-    background: #3ba36a;     /* Línea verde viva debajo de títulos */
+    background: #3ba36a;
 }
 
 /* IMAGEN PRINCIPAL */
@@ -186,20 +228,11 @@ h2::after {
     cursor: pointer;
     transition: background .3s;
     margin-top: 12px;
+    border-radius: 0 0 18px 18px;
 }
 
 .card button:hover {
     background: #2e8b57;
-}
-
-/* CAJA SOBRE NOSOTROS */
-p[style*="f7f7f7"] {
-    background: #e8f5e9 !important;
-    border-left: 6px solid #3ba36a;
-    padding: 28px !important;
-    border-radius: 12px;
-    font-size: 17px;
-    color: #2d4a3a;
 }
 
 /* FORMULARIO */
@@ -218,6 +251,7 @@ form textarea {
     border-radius: 10px;
     font-size: 16px;
     width: 100%;
+    margin-bottom: 15px;
 }
 
 form input:focus,
@@ -241,14 +275,44 @@ form button:hover {
     background: #2e8b57 !important;
 }
 
-/* WhatsApp */
-div[style*="text-align:center"] p {
-    background: #e8f5e9;
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 50px;
-    font-size: 18px;
-    color: #1e6b4e;
+/* VALIDACIÓN DE FORMULARIO */
+.form-group {
+    position: relative;
+    margin-bottom: 22px;
+}
+
+.error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 6px;
+    display: none;
+    font-weight: 500;
+}
+
+.form-group.error input,
+.form-group.error textarea {
+    border-color: #e74c3c !important;
+    box-shadow: 0 0 0 3px rgba(231,76,60,0.15) !important;
+}
+
+.form-group.success input,
+.form-group.success textarea {
+    border-color: #3ba36a !important;
+    box-shadow: 0 0 0 3px rgba(59,163,106,0.15) !important;
+}
+
+.success-message {
+    background: #d4edda;
+    color: #155724;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 6px solid #3ba36a;
+    text-align: center;
+    margin: 30px auto;
+    max-width: 600px;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
 }
 
 /* FOOTER */
@@ -270,90 +334,5 @@ footer {
     
     h1 {
         font-size: 2.4rem;
-    }
-}
-/* Contenedor derecha del navbar */
-.nav-right {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    flex-wrap: wrap;
-}
-
-/* Combobox bonito */
-.sitios-select {
-    padding: 10px 14px;
-    border: 2px solid #e8f5e9;
-    border-radius: 10px;
-    background: white;
-    color: #1e6b4e;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    outline: none;
-    transition: all .3s;
-}
-
-.sitios-select:focus {
-    border-color: #3ba36a;
-    box-shadow: 0 0 0 3px rgba(59, 163, 106, 0.2);
-}
-
-/* Botones individuales elegantes */
-.nav-btn {
-    background: #3ba36a;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 10px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14.5px;
-    white-space: nowrap;
-    transition: all .3s ease;
-    box-shadow: 0 2px 6px rgba(59, 163, 106, 0.3);
-}
-
-.nav-btn:hover {
-    background: #2e8b57;
-    transform: translateY(-2px);
-    box-shadow: 0 5px 12px rgba(46, 139, 87, 0.4);
-}
-
-/* Responsive: en móvil se apilan verticalmente */
-@media (max-width: 868px) {
-    .nav-right {
-        position: absolute;
-        right: 15px;
-        top: 70px;
-        background: #1e6b4e;
-        flex-direction: column;
-        padding: 15px;
-        border-radius: 14px;
-        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        gap: 12px;
-        z-index: 999;
-        display: none; /* se muestra solo al abrir menú */
-    }
-
-    .nav-right.show {
-        display: flex;
-    }
-
-    .sitios-select,
-    .nav-btn {
-        width: 220px;
-        text-align: center;
-    }
-
-    .menu-btn {
-        display: block;
-    }
-}
-
-/* Mostrar el nav-right cuando se abre el menú móvil */
-@media (max-width: 868px) {
-    .menu-btn:active ~ .nav-right,
-    .nav-right.show {
-        display: flex;
     }
 }
