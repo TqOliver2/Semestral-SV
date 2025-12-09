@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservaciones - Turismo Coclé</title>
+    <link rel="stylesheet" href="reservaciones.css">
+</head>
+<body>
+
+<!-- MENÚ -->
+<nav class="navbar">
+    <div class="logo">Turismo Coclé</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="Inicio.html">Inicio</a></li>
+        <li class="dropdown">
+            <a href="#">Sitios Turísticos ▼</a>
+            <ul class="dropdown-content">
+                <li><a href="El Valle de Antón/el valle.html">El Valle de Antón</a></li>
+                <li><a href="Playa Santa Clara/santa-clara.html">Playa Santa Clara</a></li>
+                <li><a href="El caño/El cano.html">El Caño</a></li>
+            </ul>
+        </li>
+        <li><a href="contacto_nosotros.html">Nosotros & Contacto</a></li>
+        <li><a href="reservaciones.html" class="active">Reservaciones</a></li>
+        <li><a href="login.html">Login Admin</a></li>
+    </ul>
+
+    <div class="menu-btn" id="menuBtn">☰</div>
+</nav>
+
+<div class="container">
+    <h1 class="titulo">Reservación de Paquetes Turísticos</h1>
+    <p class="subtitulo">Selecciona tu experiencia y reserva fácilmente.</p>
+
+    <!-- CARDS -->
+    <div class="cards">
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/f7/25/45/f72545855fc2d894d3100db2c0113a3a.jpg">
+            <h3>Escapada El Valle</h3>
+            <p>2 días / 1 noche + canopy + termales</p>
+            <strong>$179</strong>
+            <button onclick="agregarReserva('Escapada El Valle', 179)">Reservar</button>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/1200x/f7/25/45/f72545855fc2d894d3100db2c0113a3a.jpg">
+            <h3>Tour 1 Día – El Valle</h3>
+            <p>India Dormida + Chorro del Macho</p>
+            <strong>$95</strong>
+            <button onclick="agregarReserva('Tour 1 Día – El Valle', 95)">Reservar</button>
+        </div>
+        <div class="card">
+            <img src="https://i.pinimg.com/736x/3a/b1/9d/3ab19dc467ff4c93fd201122852eea4b.jpg">
+            <h3>Día de Playa Santa Clara</h3>
+            <p>Transporte + almuerzo + piscina</p>
+            <strong>$85</strong>
+            <button onclick="agregarReserva('Día de Playa Santa Clara', 85)">Reservar</button>
+        </div>
+        <div class="card">
+            <img src="https://tse1.mm.bing.net/th/id/OIP.gLBPnUC63VOJNeY7p28ZugHaE6">
+            <h3>Tour Arqueológico El Caño</h3>
+            <p>Guía privado + almuerzo + traslado</p>
+            <strong>$130</strong>
+            <button onclick="agregarReserva('Tour Arqueológico El Caño', 130)">Reservar</button>
+        </div>
+    </div>
+</div>
+
+<!-- CARRITO / RESERVACIONES -->
+<div id="carrito">
+    <h2>Mis Reservaciones</h2>
+    <ul id="listaCarrito"></ul>
+    <p id="total">Total: $0.00</p>
+    <button onclick="enviarReservacion()">Enviar Reservación</button>
+</div>
+
+<footer>© 2025 Turismo Coclé</footer>
+
+<script src="reservaciones.js"></script>
+</body>
+</html>
