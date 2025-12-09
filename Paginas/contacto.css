@@ -1,0 +1,180 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* ----------- NAVBAR ----------- */
+.navbar {
+    background: #1b3c59;
+    color: white;
+    padding: 14px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    transition: .3s ease;
+}
+
+.nav-links li a:hover {
+    color: #bcd4e6;
+}
+
+/* -------- DROPDOWN ESTILO -------- */
+.dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background: #1b3c59;
+    position: absolute;
+    top: 40px;
+    width: 200px;
+    border-radius: 0 0 8px 8px;
+    padding: 10px 0;
+}
+
+.dropdown-menu a {
+    padding: 10px 20px;
+}
+
+.dropdown-menu a:hover {
+    background: #284d70;
+}
+
+/* ACTIVADOR */
+.show-dropdown {
+    display: flex !important;
+}
+
+/* -------- MENÚ RESPONSIVE -------- */
+.menu-btn {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+@media(max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: #1b3c59;
+        width: 230px;
+        flex-direction: column;
+        display: none;
+        padding: 15px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* ----------- SOBRE NOSOTROS ----------- */
+.nosotros-section {
+    padding: 100px 10% 60px;
+    background: white;
+}
+
+.nosotros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.item {
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ----------- CONTACTO ----------- */
+.contact-section {
+    padding: 60px 10%;
+    background: #f8f8f8;
+}
+
+.contact-form {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #1b3c59;
+    box-shadow: 0 0 5px rgba(27,60,89,0.3);
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    background: #1b3c59;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* ----------- FOOTER ----------- */
+footer {
+    background: #1b3c59;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+}

@@ -6,55 +6,71 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
 }
 
 /* NAVBAR */
 .navbar {
-    background: #0a6fbf;
+    background: #1b3c59;
     color: white;
-    padding: 12px 20px;
+    padding: 14px 25px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;      /* <--- MENÚ SIEMPRE ARRIBA */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;        /* <--- EVITA QUE EL SLIDER LO TAPE */
 }
 
 .logo {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: bold;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
+    gap: 25px;
 }
 
 .nav-links li a {
     color: white;
     text-decoration: none;
     font-size: 17px;
+    transition: color .3s;
 }
 
-.menu-btn {
-    display: none;
-    font-size: 26px;
-    cursor: pointer;
+.nav-links li a:hover {
+    color: #bcd4e6;
 }
 
 /* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
     background: white;
-    padding: 10px;
-    border-radius: 5px;
     list-style: none;
+    border-radius: 6px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    padding: 10px 0;
 }
 
 .dropdown-content li a {
-    color: black;
+    color: #333;
+    display: block;
+    padding: 8px 15px;
+}
+
+.dropdown-content li a:hover {
+    background: #e9eef3;
 }
 
 .dropdown:hover .dropdown-content {
@@ -62,16 +78,22 @@ body {
 }
 
 /* RESPONSIVE MENU */
+.menu-btn {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
 @media(max-width: 768px) {
     .nav-links {
         position: absolute;
         top: 60px;
         right: 0;
-        background: #0a6fbf;
-        width: 180px;
+        background: #1b3c59;
+        width: 200px;
         flex-direction: column;
-        padding: 10px;
         display: none;
+        padding: 15px;
     }
 
     .nav-links.show {
@@ -85,16 +107,16 @@ body {
 
 /* SLIDER */
 .carousel {
+    margin-top: 65px;
     position: relative;
     width: 100%;
-    height: 380px;
+    height: 420px;
     overflow: hidden;
-    margin-top: 0;
 }
 
 .carousel-slide img {
     width: 100%;
-    height: 380px;
+    height: 420px;
     object-fit: cover;
 }
 
@@ -102,7 +124,7 @@ body {
     position: absolute;
     inset: 0;
     opacity: 0;
-    transition: opacity 600ms ease;
+    transition: opacity .7s ease;
 }
 
 .carousel-slide.active {
@@ -117,26 +139,26 @@ body {
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.7);
 }
 
 .carousel-text h2 {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
 }
 
 .carousel-text p {
-    font-size: 1.5rem;
-    margin-top: 10px;
+    font-size: 1.6rem;
+    margin-top: 12px;
 }
 
 /* CONTENIDO */
 .container {
-    padding: 20px;
+    padding: 30px;
 }
 
 h2 {
-    color: #0a6fbf;
+    color: #1b3c59;
     margin-bottom: 10px;
 }
 
@@ -152,39 +174,56 @@ h2 {
     width: 30%;
     padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: transform .3s, box-shadow .3s;
 }
 
 .card img {
     width: 100%;
-    height: 180px;
+    height: 190px;
     border-radius: 10px;
     object-fit: cover;
 }
 
-.card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+.card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+    color: #1b3c59;
 }
 
-.card a {
+.card p {
+    margin: 8px 0;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.22);
+}
+
+/* ANIMACIÓN BOTONES */
+.btn-turismo {
     display: inline-block;
     margin-top: 10px;
-    padding: 8px 12px;
-    background: #0a6fbf;
+    padding: 8px 15px;
+    background: #1b3c59;
     color: white;
-    border-radius: 5px;
+    border-radius: 6px;
     text-decoration: none;
+    transition: background .3s, transform .3s;
+}
+
+.btn-turismo:hover {
+    background: #284d70;
+    transform: translateY(-3px);
 }
 
 /* FOOTER */
 footer {
-    background: #0a6fbf;
+    background: #1b3c59;
     color: white;
     text-align: center;
-    padding: 12px;
-    margin-top: 30px;
+    padding: 15px;
+    margin-top: 40px;
 }
 
 /* RESPONSIVE TARJETAS */

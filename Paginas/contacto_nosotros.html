@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros & Contacto - Turismo Coclé</title>
+
+    <link rel="stylesheet" href="contacto.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo">Coclé Tours</div>
+
+        <!-- Botón hamburguesa -->
+        <span class="menu-btn" id="menuBtn">☰</span>
+
+        <!-- Enlaces -->
+        <ul class="nav-links" id="navLinks">
+
+            <li><a href="Inicio.html">Inicio</a></li>
+
+            <li class="dropdown">
+                <a href="#" id="btnDropdown">Sitios Turísticos ▼</a>
+
+                <div class="dropdown-menu" id="dropdownMenu">
+                    <a href="valle.html">El Valle de Antón</a>
+                    <a href="santa-clara.html">Playa Santa Clara</a>
+                    <a href="cano.html">El Caño</a>
+                </div>
+            </li>
+
+            <li><a href="nosotros_contacto.html">Nosotros & Contacto</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- SOBRE NOSOTROS -->
+    <section class="nosotros-section">
+        <h2>Sobre Nosotros</h2>
+
+        <div class="nosotros-grid">
+
+            <div class="item">
+                <h3>Nuestra Historia</h3>
+                <p>Somos un proyecto dedicado a promover el turismo en la provincia de Coclé.</p>
+            </div>
+
+            <div class="item">
+                <h3>Misión</h3>
+                <p>Brindar información confiable y accesible que impulse el turismo sostenible.</p>
+            </div>
+
+            <div class="item">
+                <h3>Visión</h3>
+                <p>Convertirnos en la plataforma digital líder sobre turismo en Panamá.</p>
+            </div>
+
+            <div class="item">
+                <h3>Valores</h3>
+                <p>Compromiso, responsabilidad, respeto por el ambiente.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section class="contact-section">
+        <h2>Contáctanos</h2>
+
+        <form id="formContacto" class="contact-form">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" placeholder="Ingresa tu nombre">
+
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" placeholder="ejemplo@gmail.com">
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" placeholder="Escribe tu mensaje aquí"></textarea>
+
+            <button type="submit">Enviar mensaje</button>
+
+            <p id="resultado" class="resultado"></p>
+        </form>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Turismo en Coclé - Todos los derechos reservados</p>
+    </footer>
+
+
+    <script src="contacto.js"></script>
+</body>
+</html>

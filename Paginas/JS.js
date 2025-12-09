@@ -20,4 +20,4 @@ function autoSlide() {
     showSlide(index);
 }
 
-setInterval(autoSlide, 3000); // Cada 3s
+setInterval(autoSlide, 3000);
