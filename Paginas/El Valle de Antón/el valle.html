@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Valle de Antón - Turismo en Coclé</title>
+    <link rel="stylesheet" href="Stilo1.css">
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">Turismo Coclé</div>
+    <ul class="nav-links">
+        <li><a href="../Inicio.html">Inicio</a></li>
+        <li><a href="el valle.html" style="color:#2e8b57; font-weight:bold;">El Valle de Antón</a></li>
+        <li><a href="../Playa Santa Clara/santa-clara.html">Playa Santa Clara</a></li>
+        <li><a href="../El caño/El cano.html">El Caño</a></li>
+    </ul>
+    <div class="menu-btn" id="menuBtn">☰</div>
+</nav>
+
+<div class="container" style="margin-top:80px;">
+
+    <!-- INFORMACIÓN DEL LUGAR -->
+    <h1 style="text-align:center; color:#2e8b57;">El Valle de Antón</h1>
+    <img src="https://i.pinimg.com/1200x/f7/25/45/f72545855fc2d894d3100db2c0113a3a.jpg" style="width:100%; border-radius:15px; margin:20px 0;">
+    <p style="font-size:18px; line-height:1.8;">
+        Pueblo mágico dentro de un cráter volcánico. Clima fresco todo el año (18-24°C). 
+        Ideal para caminatas, canopy, termales y desconexión total.
+    </p>
+
+    <!-- PAQUETES TURÍSTICOS -->
+    <h2>Paquetes disponibles</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>Escapada Fin de Semana</h3>
+            <p>2 días / 1 noche + canopy + termales</p>
+            <strong>$179 por persona</strong>
+            <button onclick="document.getElementById('formulario').scrollIntoView()">Reservar</button>
+        </div>
+        <div class="card">
+            <h3>Tour Completo 1 Día</h3>
+            <p>Desde Panamá: India Dormida + Chorro + almuerzo</p>
+            <strong>$95</strong>
+            <button onclick="document.getElementById('formulario').scrollIntoView()">Reservar</button>
+        </div>
+    </div>
+
+    <!-- SOBRE NOSOTROS -->
+    <h2>Sobre Nosotros</h2>
+    <p style="background:#f7f7f7; padding:20px; border-radius:10px;">
+        Somos coclesanos de pura cepa. Desde 2018 conectamos visitantes con lo más auténtico de nuestra provincia: 
+        guías locales, hospedaje familiar y experiencias que apoyan a la comunidad.
+    </p>
+
+    <!-- FORMULARIO DE CONTACTO -->
+    <h2 id="formulario">Reserva o consulta</h2>
+    <form action="https://formspree.io/f/xkgjrrwp" method="POST" style="display:grid; gap:15px; max-width:600px; margin:0 auto;">
+        <input type="text" name="nombre" placeholder="Nombre" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="telefono" placeholder="Teléfono/WhatsApp">
+        <input type="hidden" name="destino" value="El Valle de Antón">
+        <textarea name="mensaje" rows="5" placeholder="¿En qué te ayudamos? (fechas, personas, etc.)" required></textarea>
+        <button type="submit" style="padding:15px; background:#2e8b57; color:white; border:none; font-size:18px;">Enviar consulta</button>
+    </form>
+
+    <div style="text-align:center; margin:40px 0;">
+        <p><strong>WhatsApp:</strong> +507 6999-8888</p>
+    </div>
+</div>
+
+<footer>
+    <p>© 2025 Turismo en Coclé</p>
+</footer>
+<script src="JS.js"></script>
+</body>
+</html>
