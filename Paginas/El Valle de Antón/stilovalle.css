@@ -1,0 +1,257 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #f5f9f6;
+    color: #1e3e30;
+    line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+    background: #1e6b4e;
+    color: #e8f5e9;
+    padding: 16px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 9999;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: #e8f5e9;
+}
+
+/* NAV DERECHA */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.nav-btn {
+    background: #2e8b57;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14.5px;
+    transition: all .3s ease;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.nav-btn:hover {
+    background: #256d45;
+    transform: translateY(-2px);
+}
+
+.nav-btn.active {
+    background: #155f3e !important;
+}
+
+.sitios-select {
+    padding: 10px 14px;
+    border: 2px solid #c6e6d5;
+    border-radius: 10px;
+    background: white;
+    color: #1e6b4e;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* RESPONSIVE MENU */
+@media (max-width: 868px) {
+    .nav-right {
+        position: absolute;
+        top: 70px;
+        right: 15px;
+        background: #1e6b4e;
+        padding: 15px;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        flex-direction: column;
+        gap: 12px;
+        display: none;
+    }
+
+    .nav-right.show {
+        display: flex;
+    }
+}
+
+/* ================= CONTENIDO ================= */
+.container {
+    max-width: 1100px;
+    margin: 120px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo {
+    font-size: 2.4rem;
+    color: #1e6b4e;
+}
+
+.subtitulo {
+    font-size: 18px;
+    color: #2d4f3c;
+    margin-bottom: 30px;
+}
+
+/* ================= TARJETAS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 15px;
+    border-radius: 14px;
+    border: 1px solid #b7d8c8;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: transform .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card button {
+    width: 100%;
+    padding: 12px;
+    background: #1e6b4e;
+    border: none;
+    color: white;
+    font-size: 17px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 12px;
+}
+
+.card button:hover {
+    background: #155f3e;
+}
+
+/* ================= CARRITO ================= */
+#carrito {
+    margin-top: 50px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    border: 1px solid #b7d8c8;
+}
+
+#carrito h2 {
+    color: #1e6b4e;
+    font-size: 24px;
+}
+
+#carrito ul {
+    list-style: none;
+    padding: 0;
+}
+
+#carrito li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: #1e3e30;
+}
+
+#total {
+    margin-top: 12px;
+    color: #1e6b4e;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#finalizarBtn {
+    background: #2e8b57;
+    padding: 12px;
+    width: 100%;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#finalizarBtn:hover {
+    background: #256d45;
+}
+
+/* ================= FORMULARIO ================= */
+#formularioCompra {
+    display: none;
+    background: white;
+    width: 70%;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #b7d8c8;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+#formularioCompra input,
+#formularioCompra textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 1.5px solid #9ccab5;
+}
+
+#formularioCompra button {
+    background: #1e6b4e;
+    padding: 12px;
+    width: 100%;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+#formularioCompra button:hover {
+    background: #155f3e;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #1e6b4e;
+    color: #e8f5e9;
+    text-align: center;
+    padding: 18px;
+    margin-top: 50px;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+    #carrito,
+    #formularioCompra {
+        width: 92%;
+    }
+}
